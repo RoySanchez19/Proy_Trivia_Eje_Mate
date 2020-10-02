@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Kalam', cursive;
+}
+div.cuadro1{
+    height: 70px;
+    width: 900px;
+    background-color: burlywood;
+    border-radius: 15px 15px;
+    margin: 15px auto;
+}
+.cuadro1>h1{
+    text-align: center;
+    padding: 15px;
+}
+body{
+    background-image: url(img0.jpg);
+}
+div.cuadro2{
+    margin: 20px auto;
+    width: 900px;
+    height: 900px;
+    background-color: navajowhite;
+    border-radius: 15px 15px 15px;
+    box-shadow: 15px 15px 15px black;
+}
+div>.preguntas,.resultado{
+    width: 50%;
+    padding: 15px;
+    box-sizing: border-box;
+    float: left;
+}
+tr,td{
+    padding: 10px;
+}
+img{
+    width: 380px;
+}
