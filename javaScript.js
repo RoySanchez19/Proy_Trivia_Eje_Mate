@@ -1,7 +1,21 @@
 const evaluar = document.getElementById('evaluar');
+const limpiar = document.getElementById('limpiar');
 let buenas = document.getElementById('buenas');
 let malas = document.getElementById('malas');
+let vacias = document.getElementById('vacias');
 let promedio = document.getElementById('promedio');
+
+limpiar.addEventListener('click',()=>{
+    for(i=1;i<=10;i++){
+        let num = '';
+        num = 'num'+i;
+        document.getElementById(num).value = 0;
+    }
+    buenas.innerHTML = 0;
+    malas.innerHTML = 0;
+    vacias.innerText = 0;
+    promedio.innerHTML = '0% de Respuesta Buenas.';
+})
 
 //Creando la Función
 evaluar.addEventListener('click',()=>{
@@ -17,23 +31,26 @@ evaluar.addEventListener('click',()=>{
     let num10 = parseInt(document.getElementById('num10').value);
     let conmalas = 0;
     let conbuenas = 0;
+    let convacias = 0;
     let conpromedio = 0;
     
     //Realizando las Operaciones
-    if(num1==15){conbuenas++}else{conmalas++}
-    if(num2==24){conbuenas++}else{conmalas++}
-    if(num3==10){conbuenas++}else{conmalas++}
-    if(num4==27){conbuenas++}else{conmalas++}
-    if(num5==10){conbuenas++}else{conmalas++}
-    if(num6==20){conbuenas++}else{conmalas++}
-    if(num7==125){conbuenas++}else{conmalas++}
-    if(num8==50){conbuenas++}else{conmalas++}
-    if(num9==32){conbuenas++}else{conmalas++}
-    if(num10==84){conbuenas++}else{conmalas++}
-    conpromedio = conbuenas*10 +'% de Respuesta Buenas.';
+    if(num1==15){conbuenas++}else{if(num1==0){convacias++}else{conmalas++}};
+    if(num2==24){conbuenas++}else{if(num2==0){convacias++}else{conmalas++}};
+    if(num3==10){conbuenas++}else{if(num3==0){convacias++}else{conmalas++}};
+    if(num4==27){conbuenas++}else{if(num4==0){convacias++}else{conmalas++}};
+    if(num5==10){conbuenas++}else{if(num5==0){convacias++}else{conmalas++}};
+    if(num6==20){conbuenas++}else{if(num6==0){convacias++}else{conmalas++}};
+    if(num7==125){conbuenas++}else{if(num7==0){convacias++}else{conmalas++}};
+    if(num8==50){conbuenas++}else{if(num8==0){convacias++}else{conmalas++}};
+    if(num9==32){conbuenas++}else{if(num9==0){convacias++}else{conmalas++}};
+    if(num10==84){conbuenas++}else{if(num10==0){convacias++}else{conmalas++}};
 
-    console.log(buenas.value, malas.value, promedio.value);
-    buenas.value = conbuenas;
-    malas.value = conmalas;
-    promedio.value = conpromedio;
+    conpromedio = conbuenas*10 +'% de Respuesta Buenas.';
+    console.log('Nro1 '+num1);
+    // console.log(conbuenas.value, conmalas.value, convacias.value, conpromedio.value);
+    buenas.innerHTML = conbuenas;
+    malas.innerHTML = conmalas;
+    vacias.innerHTML = convacias;
+    promedio.innerHTML = conpromedio;
 })
